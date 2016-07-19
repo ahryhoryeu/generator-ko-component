@@ -5,5 +5,5 @@ define(function (require) {
 
     return {
         template: template
-    }
+    };
 });

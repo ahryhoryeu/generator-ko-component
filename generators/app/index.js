@@ -51,16 +51,18 @@ module.exports = yeoman.Base.extend({
       this.destinationPath(filePath + '.js')
     );
 
-    this.fs.copyTpl(
-      this.templatePath('component.less'),
-      this.destinationPath(filePath + '.less'),
-      {
-        componentName: this.props.componentName
-      }
-    );
+    if (this.props.generateLess) {
+      this.fs.copyTpl(
+        this.templatePath('component.less'),
+        this.destinationPath(filePath + '.less'),
+        {
+          componentName: this.props.componentName
+        }
+      );
+    }
   },
 
   install: function () {
-    this.installDependencies();
+    //this.installDependencies();
   }
 });
