@@ -1,4 +1,4 @@
-# generator-ko-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-ko-component [![NPM version][npm-image]][npm-url]
 > Generator for knockout.js components.
 
 ## Installation
@@ -47,7 +47,3 @@ MIT © [Andrei Hryhoryeu](mailto:a.v.hryhoryeu@gmail.com)
 
 [npm-image]: https://badge.fury.io/js/generator-ko-component.svg
 [npm-url]: https://npmjs.org/package/generator-ko-component
-[travis-image]: https://travis-ci.org//generator-ko-component.svg?branch=master
-[travis-url]: https://travis-ci.org//generator-ko-component
-[daviddm-image]: https://david-dm.org//generator-ko-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//generator-ko-component
