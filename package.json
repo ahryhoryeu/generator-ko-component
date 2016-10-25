@@ -1,6 +1,6 @@
 {
   "name": "generator-ko-component",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generator for knockout.js components.",
   "homepage": "",
   "author": {
@@ -18,8 +18,8 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.22.0",
     "chalk": "^1.0.0",
+    "yeoman-generator": "^0.22.0",
     "yosay": "^1.0.2"
   },
   "devDependencies": {
