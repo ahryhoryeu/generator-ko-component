@@ -10,11 +10,28 @@ npm install -g yo
 npm install -g generator-ko-component
 ```
 
-Then generate your new project:
+Then generate your new component:
 
 ```bash
 yo ko-component
 ```
+
+## Description
+
+Generator will create a folder with 2-4 files describing a component. It assumes you use [require.js](http://requirejs.org/) as an AMD tool.
+
+The files are:
+- HTML component template
+- JS component file
+- LESS stylesheet (optional)
+- JS component view model file (optional)
+
+The questions are:
+- The name of the component
+- Whether you want to generate LESS file
+- Whether you want to create a component with view model or a template-only component
+- Whether you want to create a separate file for component view model (in case you want to re-use it separately)
+- Base require.js path (if not provided, it will be current folder path)
 
 ## Getting To Know Yeoman
 
@@ -25,7 +42,7 @@ yo ko-component
 
 ## License
 
-MIT © [Andrei Hryhoryeu]()
+MIT © [Andrei Hryhoryeu](mailto:a.v.hryhoryeu@gmail.com)
 
 
 [npm-image]: https://badge.fury.io/js/generator-ko-component.svg
