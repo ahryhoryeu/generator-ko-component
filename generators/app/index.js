@@ -37,11 +37,6 @@ module.exports = yeoman.Base.extend({
                 name: 'hasSeparateViewModel',
                 message: 'Do you want Component View Model to be in a separate file?',
                 default: false
-            },
-            {
-                type: 'input',
-                name: 'basePath',
-                message: 'Provide base path (optional)'
             }
         ];
 
@@ -54,11 +49,9 @@ module.exports = yeoman.Base.extend({
 
     writing: function () {
 
-        let filePath = `${this.props.componentName}/${this.props.componentName}`;
-        let userPath = this.props.basePath || this.destinationRoot();
-        let basePath = `${userPath}/${filePath}`;
+        const filePath = `${this.props.componentName}/${this.props.componentName}`;
 
-        let toTitleCase = function (str) {
+        const toTitleCase = function (str) {
             return str.split('')
                 .map((char, i) => i === 0 ? char.toUpperCase() : char)
                 .join('');
@@ -85,7 +78,7 @@ module.exports = yeoman.Base.extend({
                 addViewModel: this.props.addViewModel,
                 separateViewModel: this.props.hasSeparateViewModel,
                 viewModelName: viewModelName,
-                basePath: basePath
+                componentName: this.props.componentName
             }
         );
 
