@@ -1,6 +1,8 @@
 import template from './<%= componentName %>.html';
 import componentRegistrator from 'common/scripts/helpers/componentRegistrator';
-<% if (addViewModel && separateViewModel) {%>import <%= viewModelName %> from './<%= componentName %>-view-model';<%}%><% if(addViewModel && !separateViewModel) {%>
+<% if (addViewModel && separateViewModel) {%>import <%= viewModelName %> from './<%= componentName %>-view-model';<%}%>
+<% if (generateLess) {%>import './<%= componentName %>.less';<%}%>
+<% if (addViewModel && !separateViewModel) {%>
 class <%= viewModelName %> {
     constructor(params) {
 

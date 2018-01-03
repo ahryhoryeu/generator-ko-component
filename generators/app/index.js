@@ -74,7 +74,8 @@ module.exports = class extends Generator {
                 addViewModel: this.props.addViewModel,
                 separateViewModel: this.props.hasSeparateViewModel,
                 viewModelName: viewModelName,
-                componentName: this.props.componentName
+                componentName: this.props.componentName,
+                generateLess: this.props.generateLess
             }
         );
 

@@ -18,7 +18,8 @@ yo ko-component
 
 ## Description
 
-Generator will create a folder with 2-4 files describing a component. It assumes you use [require.js](http://requirejs.org/) as an AMD tool.
+Generator will create a folder with 2-4 files describing a component. Versions below 1.0 used to assume you use [require.js](http://requirejs.org/) as an AMD tool.
+Starting from 1.0, the generator creates ES2015 modules and uses ES2015 classes.
 
 The files are:
 - HTML component template
@@ -31,7 +32,6 @@ The questions are:
 - Whether you want to generate LESS file
 - Whether you want to create a component with view model or a template-only component
 - Whether you want to create a separate file for component view model (in case you want to re-use it separately)
-- Base require.js path (if not provided, it will be current folder path)
 
 ## Getting To Know Yeoman
 
