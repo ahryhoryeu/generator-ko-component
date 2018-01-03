@@ -1,19 +1,17 @@
 'use strict';
-let yeoman = require('yeoman-generator');
-let chalk = require('chalk');
-let yosay = require('yosay');
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
 
-module.exports = yeoman.Base.extend({
+module.exports = class extends Generator {
 
-    prompting: function () {
-        let done = this.async();
-
+    prompting() {
         // Have Yeoman greet the user.
         this.log(yosay(
             `Welcome to the ${chalk.red('knockout.js component')} generator!`
         ));
 
-        let prompts = [
+        const prompts = [
             {
                 type: 'input',
                 name: 'componentName',
@@ -40,14 +38,12 @@ module.exports = yeoman.Base.extend({
             }
         ];
 
-        this.prompt(prompts, props => {
+        return this.prompt(prompts).then(props => {
             this.props = props;
-            // To access props later use this.props.someAnswer;
-            done();
         });
-    },
+    }
 
-    writing: function () {
+    writing() {
 
         const filePath = `${this.props.componentName}/${this.props.componentName}`;
 
@@ -57,15 +53,15 @@ module.exports = yeoman.Base.extend({
                 .join('');
         };
 
-        let viewModelName = this.props.componentName.split('-')
+        const viewModelPrefix = this.props.componentName.split('-')
             .map(x => toTitleCase(x))
             .join('');
 
-        viewModelName = `${viewModelName}ViewModel`;
+        const viewModelName = `${viewModelPrefix}ViewModel`;
 
         this.fs.copyTpl(
             this.templatePath('component.html'),
-            this.destinationPath(filePath + '.html'),
+            this.destinationPath(`${filePath}.html`),
             {
                 componentName: this.props.componentName
             }
@@ -73,7 +69,7 @@ module.exports = yeoman.Base.extend({
 
         this.fs.copyTpl(
             this.templatePath('component.js'),
-            this.destinationPath(filePath + '.js'),
+            this.destinationPath(`${filePath}.js`),
             {
                 addViewModel: this.props.addViewModel,
                 separateViewModel: this.props.hasSeparateViewModel,
@@ -85,7 +81,7 @@ module.exports = yeoman.Base.extend({
         if (this.props.hasSeparateViewModel) {
             this.fs.copyTpl(
                 this.templatePath('component-view-model.js'),
-                this.destinationPath(filePath + '-view-model.js'),
+                this.destinationPath(`${filePath}-view-model.js`),
                 {
                     viewModelName: viewModelName
                 }
@@ -95,11 +91,11 @@ module.exports = yeoman.Base.extend({
         if (this.props.generateLess) {
             this.fs.copyTpl(
                 this.templatePath('component.less'),
-                this.destinationPath(filePath + '.less'),
+                this.destinationPath(`${filePath}.less`),
                 {
                     componentName: this.props.componentName
                 }
             );
         }
     }
-});
+};
