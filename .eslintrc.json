@@ -1,0 +1,61 @@
+{
+    "root": true,
+    "extends": "eslint:recommended",
+    "env": {
+        "browser": false,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+        "strict": "warn",
+        "func-names": "off",
+        "newline-before-return": "warn",
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "quote-props": [
+            "error",
+            "consistent-as-needed"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "max-len": [
+            "warn",
+            150
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "args": "none"
+            }
+        ],
+        "no-tabs": "warn",
+        "one-var": [
+            "error",
+            "never"
+        ],
+        "object-curly-newline": [
+            "warn",
+            {
+                "minProperties": 2
+            }
+        ],
+        "one-var-declaration-per-line": "warn",
+        "eqeqeq": [
+            "error",
+            "smart"
+        ]
+    }
+}

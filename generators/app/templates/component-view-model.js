@@ -1,9 +1,5 @@
-define(function (require) {
-    'use strict';
-
-    function <%= viewModelName %>(params) {
+export default class <%= viewModelName %> {
+    constructor(params) {
 
     }
-
-    return <%= viewModelName %>;
-});
+}
